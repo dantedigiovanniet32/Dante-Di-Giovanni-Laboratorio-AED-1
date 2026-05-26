@@ -1,0 +1,7 @@
+public static class HelloWorld
+{
+    public static string Saludar()
+    {
+        return "Hello, World!";
+    }
+}

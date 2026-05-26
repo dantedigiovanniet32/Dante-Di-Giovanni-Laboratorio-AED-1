@@ -1,0 +1,29 @@
+static class QuestLogic
+{
+    public static bool CanFastAttack(bool caballeroDespierto)
+    {
+        return !caballeroDespierto;
+    }
+
+    public static bool CanSpy(bool caballeroDespierto, bool arqueroDespierto, bool prisioneroDespierto)
+    {
+        return caballeroDespierto || arqueroDespierto || prisioneroDespierto;
+    }
+
+    public static bool CanSignalPrisoner(bool arqueroDespierto, bool prisioneroDespierto)
+    {
+        return prisioneroDespierto && !arqueroDespierto;
+    }
+
+    public static bool CanFreePrisoner(bool caballeroDespierto, bool arqueroDespierto, bool prisioneroDespierto, bool perroPresente)
+    {
+        if (perroPresente)
+        {
+            return !arqueroDespierto;
+        }
+        else
+        {
+            return prisioneroDespierto && !caballeroDespierto && !arqueroDespierto;
+        }
+    }
+}

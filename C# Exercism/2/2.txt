@@ -1,0 +1,61 @@
+using System;
+
+class BirdCount
+{
+    private int[] avesPorDia;
+
+    public BirdCount(int[] avesPorDia)
+    {
+        this.avesPorDia = avesPorDia;
+    }
+
+    public static int[] LastWeek()
+    {
+        return new int[] { 0, 2, 5, 3, 7, 8, 4 };
+    }
+
+    public int Today()
+    {
+        return avesPorDia[avesPorDia.Length - 1];
+    }
+
+    public void IncrementTodaysCount()
+    {
+        avesPorDia[avesPorDia.Length - 1] = avesPorDia[avesPorDia.Length - 1] + 1;
+    }
+
+    public bool HasDayWithoutBirds()
+    {
+        for (int i = 0; i < avesPorDia.Length; i++)
+        {
+            if (avesPorDia[i] == 0)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int CountForFirstDays(int cantidadDias)
+    {
+        int total = 0;
+        for (int i = 0; i < cantidadDias; i++)
+        {
+            total += avesPorDia[i];
+        }
+        return total;
+    }
+
+    public int BusyDays()
+    {
+        int dias = 0;
+        foreach (int valor in avesPorDia)
+        {
+            if (valor >= 5)
+            {
+                dias++;
+            }
+        }
+        return dias;
+    }
+}
