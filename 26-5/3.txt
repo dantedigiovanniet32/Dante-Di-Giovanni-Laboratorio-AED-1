@@ -1,0 +1,17 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese el precio de lista");
+            int plista = Convert.ToInt32(Console.ReadLine());
+            int descuento = plista * 18 / 100;
+            int pcdesc = plista - descuento;
+
+            Console.WriteLine($"Precio de lista: ${plista}");
+            Console.WriteLine("Descuento: 18% sobre el preico de lista.");
+            Console.WriteLine($"Precio con descueto: ${pcdesc}");
+        }
+    }
+}

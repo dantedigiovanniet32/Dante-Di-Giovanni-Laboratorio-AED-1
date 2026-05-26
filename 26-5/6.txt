@@ -1,0 +1,17 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese el valor de un lado del cuadrado: ");
+            int lado = Convert.ToInt32(Console.ReadLine());
+
+            int perimetro = 4 * lado;
+            int superficie = lado * lado;
+
+            Console.WriteLine("Perímetro: " + perimetro);
+            Console.WriteLine("Superficie: " + superficie);
+        }
+    }
+}

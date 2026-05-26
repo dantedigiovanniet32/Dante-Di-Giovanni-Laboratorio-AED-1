@@ -1,0 +1,20 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese un valor entero de 3 digitos");
+            int numero = Convert.ToInt32(Console.ReadLine());
+
+            int unidades = numero % 10;
+            int decenas = (numero / 10) % 10;
+            int centenas = numero / 100;
+
+            Console.WriteLine($"Valor ingresado: {numero}");
+            Console.WriteLine($"Unidaddes: {unidades}");
+            Console.WriteLine($"Decenas: {decenas}");
+            Console.WriteLine($"Centennas: {centenas}");
+        }
+    }
+}

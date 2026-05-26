@@ -1,0 +1,31 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Igrese la hora del primer instante");
+            Console.Write("Hora: ");
+            int hora1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Minutos: ");
+            int min1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Segundos: ");
+            int seg1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Ingrese la hora del segundo instante");
+            Console.Write("Hora: ");
+            int hora2 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Minutos: ");
+            int min2 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Segundos: ");
+            int seg2 = Convert.ToInt32(Console.ReadLine());
+
+            int total1 = hora1 * 3600 + min1 * 60 + seg1;
+            int total2 = hora2 * 3600 + min2 * 60 + seg2;
+
+            int intervalo = total2 - total1;
+
+            Console.WriteLine($"Intervalo en segundos: {intervalo}");
+        }
+    }
+}

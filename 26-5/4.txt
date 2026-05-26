@@ -1,0 +1,18 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese un numero de dos cifras");
+            int numero = Convert.ToInt32(Console.ReadLine());
+
+            int decenas = numero / 10;
+            int unidades = numero % 10;
+            int valorPermutado = unidades * 10 + decenas;
+
+            Console.WriteLine($"Valor: {numero}");
+            Console.WriteLine($"Valor permtado: {valorPermutado}");
+        }
+    }
+}

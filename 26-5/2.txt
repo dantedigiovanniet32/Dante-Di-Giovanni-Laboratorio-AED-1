@@ -1,0 +1,16 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingresar un numero de tres cifras");
+            int numero = Convert.ToInt32(Console.ReadLine());
+
+            int medio = (numero / 10) % 10;
+
+            Console.WriteLine($"Valor: {numero}");
+            Console.WriteLine($"La cifra central es: {medio}");
+        }
+    }
+}

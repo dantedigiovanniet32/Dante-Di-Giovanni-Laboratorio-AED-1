@@ -1,0 +1,16 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingresar una fecha como un entero de 6 digitos");
+            int fecha = Convert.ToInt32(Console.ReadLine());
+
+            int mes = (fecha % 10000) / 100;
+
+            Console.WriteLine($"Fecha: {fecha}");
+            Console.WriteLine($"Mes: {mes}");
+        }
+    }
+}
