@@ -1,0 +1,15 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingresa una palabra");
+            string lectura = Console.ReadLine();
+            for (int i = 0; i < lectura.Length; i++)
+            {
+                Console.WriteLine(lectura[i]);
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Escribe una oracion");
+            string lecturaOracion = Console.ReadLine();
+            int contA = 0;
+            for (int i = 0; i < lecturaOracion.Length; i++)
+            {
+                char c = lecturaOracion[i];
+                if (c == 'a' || c == 'A') contA = contA + 1;
+            }
+            Console.WriteLine($"Cantidad de letras a: {contA}");
+        }
+    }
+}

@@ -1,0 +1,37 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Escribi un numero");
+
+            string lectura = Console.ReadLine();
+            int numero = Convert.ToInt32(lectura);
+
+            bool esPrimo = true;
+
+            for (int i = 2; i < numero; i++)
+            {
+
+                if (numero % i == 0)
+                {
+                    esPrimo = false;
+                }
+            }
+
+
+            if (esPrimo)
+            {
+
+                Console.WriteLine("Es primmo");
+            }
+            else
+            {
+                Console.WriteLine("No es primo");
+            }
+
+
+        }
+    }
+}

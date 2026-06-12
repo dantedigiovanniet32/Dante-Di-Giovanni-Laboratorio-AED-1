@@ -1,0 +1,23 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.Write("Ingresa una palabra: ");
+            string lectura = Console.ReadLine();
+
+            string acumulado = "";
+
+            for (int i = 0; i < lectura.Length; i++)
+            {
+                acumulado = acumulado + lectura[i];
+                Console.WriteLine(acumulado);
+            }
+
+
+
+        }
+    }
+}

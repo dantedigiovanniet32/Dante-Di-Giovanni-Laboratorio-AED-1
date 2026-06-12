@@ -1,0 +1,219 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+
+
+        //Funciones A - R
+        static void EjercicioA()
+        {
+            for (int i = 1; i <= 100; i++) if (i % 3 == 0) Console.WriteLine(i);
+        }
+
+        static void EjercicioB()
+        {
+            Console.Write("Introduci tu edad: ");
+            string lectura = Console.ReadLine();
+            int edad = Convert.ToInt32(lectura);
+            Console.WriteLine($"Tu edad es: {edad}");
+        }
+
+        static void EjercicioC()
+        {
+            Console.Write("Ingresa una palabra: ");
+            string lectura = Console.ReadLine();
+            Console.WriteLine("Longitud: " + lectura.Length);
+        }
+
+        static void EjercicioD()
+        {
+            Console.WriteLine("Contrasena definida");
+        }
+
+        static void EjercicioE()
+        {
+            Console.WriteLine("Ingresa 10 numeros:");
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.Write($"Numero {i}: ");
+                string lectura = Console.ReadLine();
+                int numero = Convert.ToInt32(lectura);
+                Console.WriteLine($"Leiste: {numero}");
+            }
+        }
+
+        static void EjercicioF()
+        {
+            Console.Write("Ingresa tu nombre: ");
+            string lectura = Console.ReadLine();
+            Console.WriteLine("Saludos, " + lectura);
+        }
+
+        static void EjercicioG() {
+            Console.WriteLine("Tabla del 7:");
+            for (int i = 1; i <= 10; i++)
+            {
+
+                Console.WriteLine(7 * i);
+            }
+        }
+
+        static void EjercicioH() {
+            Console.WriteLine("Cuenta regresiva: ");
+            for (int i = 10; i >= 1; i--)
+            {
+                Console.WriteLine(i);
+
+            }
+
+
+            Console.WriteLine("oa");
+        }
+
+
+
+        static void EjercicioI()
+        {
+            Console.Write("Ingresa un numero: ");
+            string lectura = Console.ReadLine();
+            int numero = Convert.ToInt32(lectura);
+            Console.WriteLine($"Numero ingresado: {numero}");
+
+        }
+
+        static void EjercicioJ()
+
+        {
+            Console.Write("Ingrese una frase: ");
+            string lectura = Console.ReadLine();
+
+            Console.WriteLine($"Frase leida: {lectura}");
+        }
+
+        static void EjercicioK()
+        {
+            Console.Write("Ingresa un numero: ");
+
+            string lectura = Console.ReadLine();
+            int numero = Convert.ToInt32(lectura);
+            Console.WriteLine($"Numero: {numero}");
+        }
+
+        static void EjercicioL()
+        {
+            Console.WriteLine("Ingresa numeros de a uno hasta pasar 100");
+            int suma = 0;
+            while (suma <= 100)
+
+            {
+                string lectura = Console.ReadLine();
+                int valor = Convert.ToInt32(lectura);
+                suma = suma + valor;
+            }
+            Console.WriteLine($"Pasaste los 100! Total: {suma}");
+        }
+
+        static void EjercicioM()
+        {
+            Console.WriteLine("Ingresa una palabra");
+            string lectura = Console.ReadLine();
+            for (int i = 0; i < lectura.Length; i++) Console.WriteLine(lectura[i]);
+        }
+
+
+        static void EjercicioN()
+        {
+            Console.WriteLine("Ingresa tu edad");
+            string lecturaEdad = Console.ReadLine();
+            int edad = Convert.ToInt32(lecturaEdad);
+            if (edad < 16) Console.WriteLine("No podes votar ni manejar");
+            else if (edad < 18) Console.WriteLine("Podes manejar pero no votar");
+
+            else Console.WriteLine("Podes votar y manejar");
+        }
+
+        static void EjercicioO()
+        {
+            for (int i = 50; i >= 0; i -= 5) Console.WriteLine(i);
+        }
+
+        static void EjercicioP()
+
+        {
+            while (true)
+            {
+                Console.WriteLine("Ingrese la contrasena");
+                string lectura1 = Console.ReadLine();
+                Console.WriteLine("Repite la contrasena");
+                string lectura2 = Console.ReadLine();
+                if (lectura1 == lectura2) { Console.WriteLine("Acceso permitido"); break; }
+                else Console.WriteLine("No coincide, volve a intentar");
+            }
+        }
+
+
+        static void EjercicioQ()
+        {
+            while (true)
+            {
+                Console.WriteLine("Ingresa un nombre");
+                string lecturaNombre = Console.ReadLine();
+                if (lecturaNombre.Length > 10) { Console.WriteLine("Nombre largo, fin"); break; }
+            }
+        }
+
+
+        static void EjercicioR()
+        {
+             Console.WriteLine("Escribe una oracion");
+             string lecturaOracion = Console.ReadLine();
+             int contA = 0;
+             for (int i = 0; i < lecturaOracion.Length; i++) { char c = lecturaOracion[i]; if (c == 'a' || c == 'A') contA++; }
+             Console.WriteLine($"Cantidad de letras a: {contA}");
+        }
+
+
+
+
+            //Main, menu de opciones
+
+
+
+        static void Main(string[] args)
+        {
+            bool salir = false;
+            while (!salir)
+            {
+                Console.WriteLine("MENU DE EJERCICIOS");
+                Console.WriteLine("Ejercicios A - R");
+                Console.WriteLine("S. salir");
+                Console.Write("Seleccione una letra: ");
+
+                string opcion = Console.ReadLine().ToUpper();
+
+                if (opcion == "A") EjercicioA();
+                else if (opcion == "B") EjercicioB();
+                else if (opcion == "C") EjercicioC();
+                else if (opcion == "D") EjercicioD();
+                else if (opcion == "E") EjercicioE();
+                else if (opcion == "F") EjercicioF();
+                else if (opcion == "G") EjercicioG();
+                else if (opcion == "H") EjercicioH();
+                else if (opcion == "I") EjercicioI();
+                else if (opcion == "J") EjercicioJ();
+                else if (opcion == "K") EjercicioK();
+                else if (opcion == "L") EjercicioL();
+                else if (opcion == "M") EjercicioM();
+                else if (opcion == "N") EjercicioN();
+                else if (opcion == "O") EjercicioO();
+                else if (opcion == "P") EjercicioP();
+                else if (opcion == "Q") EjercicioQ();
+                else if (opcion == "R") EjercicioR();
+                else if (opcion == "S") salir = true;
+
+                else Console.WriteLine("Opcion no valida");
+            }
+        }
+        
+    }
+}

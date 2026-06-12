@@ -1,0 +1,41 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] nombres = new string[100];
+            int indice = 0;
+            string lectura = "";
+
+            while (true)
+            {
+                Console.WriteLine("Escribi un nombre");
+                lectura = Console.ReadLine();
+                int contador = 0;
+
+                bool repetido = false;
+                for (int i = 0; i < indice; i++)
+                {
+                    if (nombres[i] == lectura)
+                    {
+                        repetido = true;
+                    }
+                    contador++;
+                }
+
+                if (repetido)
+                {
+                    Console.WriteLine("Ingresaste " + contador + " nombres antes del duplicado");
+                    break;
+                }
+                else
+                {
+                    nombres[indice] = lectura;
+                    indice++;
+                }
+            }
+
+        }
+    }
+}

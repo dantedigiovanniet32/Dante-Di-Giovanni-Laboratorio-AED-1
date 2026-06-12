@@ -1,0 +1,63 @@
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int secreto = new Random().Next(1, 11);
+
+            string lectura;
+            int lecturaNumero = 0;
+
+            Console.WriteLine("Adivina un numero entre 1 y 10");
+
+
+            while (true)
+            {
+                Console.Write("Ingresa un numero: ");
+                lectura = Console.ReadLine();
+
+
+                bool valido = true;
+                if (lectura.Length == 0) valido = false;
+                for (int i = 0; i < lectura.Length && valido; i++)
+                {
+                    char c = lectura[i];
+                    if (c < '0' || c > '9') valido = false;
+                }
+
+                if (valido)
+                {
+                    lecturaNumero = 0;
+                    for (int i = 0; i < lectura.Length; i++)
+                    {
+                        lecturaNumero = lecturaNumero * 10 + (lectura[i] - '0');
+                    }
+
+                    if (lecturaNumero == secreto)
+                    {
+                        Console.WriteLine("Adivinaste!");
+                        break;
+                    }
+                    else if (lecturaNumero > secreto)
+                    {
+                        Console.WriteLine("Es menor");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Es mayor");
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("No es valido");
+                }
+
+
+            }
+        }
+    }
+}

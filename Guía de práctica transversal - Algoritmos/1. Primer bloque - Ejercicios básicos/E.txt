@@ -1,0 +1,29 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingresa 10 numeros:");
+            Console.Write("Numero 1: ");
+            string lectura = Console.ReadLine();
+
+            int mayor = Convert.ToInt32(lectura);
+
+            for (int i = 2; i <= 10; i++)
+            {
+                Console.Write("N° " + i + ": ");
+                lectura = Console.ReadLine();
+                int numero = Convert.ToInt32(lectura);
+
+                if (numero > mayor)
+                {
+                    mayor = numero;
+                }
+            }
+
+
+            Console.WriteLine("El numero mas alto es: " + mayor);
+        }
+    }
+}

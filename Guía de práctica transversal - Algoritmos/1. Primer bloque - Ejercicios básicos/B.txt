@@ -1,0 +1,27 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Introduci tu edad: ");
+            string lectura = Console.ReadLine();
+            int edad = Convert.ToInt32(lectura);
+
+            if (edad < 18)
+            {
+                Console.WriteLine("Sos mennor de edad");
+            }
+            else if (edad > 18)
+            {
+                Console.WriteLine("Sos mayor de edad");
+            }
+            else
+            {
+                Console.WriteLine("Tenes justo 18 anos");
+            }
+
+
+        }
+    }
+}

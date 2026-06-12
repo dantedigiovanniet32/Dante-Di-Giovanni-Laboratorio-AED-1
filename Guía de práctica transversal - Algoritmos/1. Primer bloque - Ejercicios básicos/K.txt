@@ -1,0 +1,19 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingresa un numero: ");
+            string lectura = Console.ReadLine();
+            int numero = Convert.ToInt32(lectura);
+
+            Console.WriteLine("Tabla:");
+            for (int i = 1; i <= 12; i++)
+            {
+                Console.WriteLine(numero * i);
+            }
+
+        }
+    }
+}

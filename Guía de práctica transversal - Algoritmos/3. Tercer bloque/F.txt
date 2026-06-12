@@ -1,0 +1,25 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            Console.Write("Ingresa una palabra: ");
+
+            string lectura = Console.ReadLine();
+
+
+            for (int i = 0; i < lectura.Length; i++)
+            {
+                char letra = Char.ToUpper(lectura[i]);
+                int posicion = letra - 'A' + 1;
+                Console.WriteLine(posicion);
+
+            }
+
+
+        }
+    }
+}

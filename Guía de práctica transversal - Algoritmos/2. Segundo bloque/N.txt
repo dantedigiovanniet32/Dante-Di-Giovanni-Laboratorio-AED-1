@@ -1,0 +1,56 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Escribi tu nombre");
+            string nombre = Console.ReadLine();
+
+
+            Console.WriteLine("Escribi tu edad");
+            string lectura = Console.ReadLine();
+
+            int edad = 0;
+
+            bool valido = true;
+
+
+
+
+
+            for (int i = 0; i < lectura.Length; i++)
+            {
+                if (lectura[i] < '0' || lectura[i] > '9')
+                {
+                    valido = false;
+                }
+            }
+
+            if (valido)
+            {
+
+                edad = Convert.ToInt32(lectura);
+
+
+                Console.WriteLine("Escribi tu mail");
+                string mail = Console.ReadLine();
+
+                if (mail.Contains("@"))
+
+                {
+                    Console.WriteLine("Formulario completado corectamente");
+                }
+                else
+                {
+                    Console.WriteLine("Mail no valido");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Edad no valida");
+            }
+
+        }
+    }
+}

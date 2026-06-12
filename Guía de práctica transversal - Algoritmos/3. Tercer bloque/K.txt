@@ -1,0 +1,43 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.Write("Ingrese un numero: ");
+            string lectura = Console.ReadLine();
+            int numero = Convert.ToInt32(lectura);
+
+
+
+            if (numero >= 0 && numero <= 25)
+            {
+                Console.WriteLine("El numero esta entre 0-25");
+            }
+
+            else if (numero >= 26 && numero <= 50)
+            {
+                Console.WriteLine("El numero esta entre 26-50");
+            }
+
+            else if (numero >= 51 && numero <= 75)
+            {
+                Console.WriteLine("El numero esta entre 51-75");
+            }
+
+            else if (numero >= 76 && numero <= 100)
+            {
+                Console.WriteLine("El numero esta entre 76-100");
+            }
+
+            else
+            {
+                Console.WriteLine("El numero no esta en ningun rango");
+            }
+
+
+
+        }
+    }
+}

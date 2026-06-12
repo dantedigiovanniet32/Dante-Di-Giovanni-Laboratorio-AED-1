@@ -1,0 +1,22 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            char[] letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+
+            for (int i = letras.Length - 1; i >= 0; i--)
+            {
+
+                Console.WriteLine(letras[i]);
+            }
+
+            Console.WriteLine("Fin");
+
+
+
+
+        }
+    }
+}

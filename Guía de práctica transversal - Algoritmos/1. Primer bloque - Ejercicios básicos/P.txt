@@ -1,0 +1,26 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                Console.WriteLine("Ingrese la contraseña");
+                string lectura1 = Console.ReadLine();
+                Console.WriteLine("Repeti la contraseña");
+                string lectura2 = Console.ReadLine();
+                if (lectura1 == lectura2)
+                {
+                    Console.WriteLine("Accedido correctamente");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("No coincide, reintente");
+                }
+            }
+
+        }
+    }
+}

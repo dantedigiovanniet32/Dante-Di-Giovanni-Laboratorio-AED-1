@@ -1,0 +1,20 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                Console.WriteLine("Ingresa un nombre");
+                string lecturaNombre = Console.ReadLine();
+                if (lecturaNombre.Length > 10)
+                {
+                    Console.WriteLine("Nombre largo, fin");
+                    break;
+                }
+            }
+
+        }
+    }
+}

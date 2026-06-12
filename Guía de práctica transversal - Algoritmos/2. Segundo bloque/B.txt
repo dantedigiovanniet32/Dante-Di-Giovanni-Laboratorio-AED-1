@@ -1,0 +1,22 @@
+string lectura;
+int numero = 0;
+
+Console.Write("Ingresa un numero: ");
+lectura = Console.ReadLine();
+
+numero = 0;
+for (int i = 0; i < lectura.Length; i++)
+{
+    numero = numero * 10 + (lectura[i] - '0');
+}
+
+Console.WriteLine("");
+Console.WriteLine("Divisores de " + numero + ":");
+
+for (int d = 1; d <= numero; d++)
+{
+    if (numero % d == 0)
+    {
+        Console.WriteLine(d);
+    }
+}

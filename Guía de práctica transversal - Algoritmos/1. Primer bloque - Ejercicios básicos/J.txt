@@ -1,0 +1,24 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingrese una frase: ");
+            string lectura = Console.ReadLine();
+            int cont = 0;
+
+            for (int i = 0; i < lectura.Length; i++)
+            {
+                char paso = char.ToLower(lectura[i]);
+
+                if (paso == 'a' || paso == 'e' || paso == 'i' || paso == 'o' || paso == 'u')
+                {
+                    cont++;
+                }
+            }
+
+            Console.WriteLine("Cantidad de vocales: " + cont);
+        }
+    }
+}

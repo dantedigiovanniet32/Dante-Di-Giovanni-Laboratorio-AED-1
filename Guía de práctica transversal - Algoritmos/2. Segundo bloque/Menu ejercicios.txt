@@ -1,0 +1,647 @@
+using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+
+
+
+
+        static void EjercicioA()
+        {
+            int secreto = new Random().Next(1, 11);
+
+            string lectura;
+            int lecturaNumero = 0;
+
+            Console.WriteLine("Adivina un numero entre 1 y 10");
+
+
+            while (true)
+            {
+                Console.Write("Ingresa un numero: ");
+                lectura = Console.ReadLine();
+
+
+                bool valido = true;
+                if (lectura.Length == 0) valido = false;
+                for (int i = 0; i < lectura.Length && valido; i++)
+                {
+                    char c = lectura[i];
+                    if (c < '0' || c > '9') valido = false;
+                }
+
+                if (valido)
+                {
+                    lecturaNumero = 0;
+                    for (int i = 0; i < lectura.Length; i++)
+                    {
+                        lecturaNumero = lecturaNumero * 10 + (lectura[i] - '0');
+                    }
+
+                    if (lecturaNumero == secreto)
+                    {
+                        Console.WriteLine("Adivinaste!");
+                        break;
+                    }
+                    else if (lecturaNumero > secreto)
+                    {
+                        Console.WriteLine("Es menor");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Es mayor");
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("No es valido");
+                }
+
+
+            }
+        }
+
+
+
+
+
+        static void EjercicioB()
+        {
+            string lectura;
+            int numero = 0;
+            Console.Write("Ingresa un numero: ");
+            lectura = Console.ReadLine();
+            for (int i = 0; i < lectura.Length; i++)
+            {
+                numero = numero * 10 + (lectura[i] - '0');
+            }
+            Console.WriteLine("");
+            Console.WriteLine("Divisores de " + numero + ":");
+            for (int d = 1; d <= numero; d++)
+            {
+                if (numero % d == 0)
+                {
+                    Console.WriteLine(d);
+                }
+            }
+        }
+
+
+
+
+
+        static void EjercicioC()
+        {
+            int cantidad = 20;
+            int a = 0;
+            int b = 1;
+            Console.WriteLine("Primeros 20 numeros de Fibonachi");
+            for (int i = 0; i < cantidad; i++)
+            {
+                Console.WriteLine(a);
+                int siguiente = a + b;
+                a = b;
+                b = siguiente;
+            }
+        }
+
+
+
+
+
+        static void EjercicioD()
+        {
+            Console.Write("Elegi la operacion (suma, resta, multiplicacion, division): ");
+            string operacion = Console.ReadLine();
+            Console.Write("Ingresa el primer numero: ");
+            int numero1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Ingresa el segundo numero: ");
+            int numero2 = Convert.ToInt32(Console.ReadLine());
+            double resultado = 0;
+            string op = operacion.ToLower();
+            if (op == "suma" || op == "+")
+            {
+                resultado = numero1 + numero2;
+            }
+            else if (op == "resta" || op == "-")
+            {
+                resultado = numero1 - numero2;
+            }
+            else if (op == "multiplicacion" || op == "*" || op == "multiplicar")
+            {
+                resultado = numero1 * numero2;
+            }
+            else if (op == "division" || op == "/")
+            {
+                resultado = (double)numero1 / numero2;
+            }
+            Console.WriteLine("");
+            Console.WriteLine("El resutlado es: " + resultado);
+        }
+
+
+
+
+        static void EjercicioE()
+        {
+            Console.Write("Ingresa un numero: ");
+            int numero = Convert.ToInt32(Console.ReadLine());
+            int resultado = 1;
+            for (int i = 1; i <= numero; i++)
+            {
+                resultado = resultado * i;
+            }
+            Console.WriteLine("");
+            Console.WriteLine("El factoral es: " + resultado);
+        }
+
+
+
+
+        static void EjercicioF()
+        {
+            Console.Write("Ingresa nombre: ");
+            string lectura = Console.ReadLine();
+            string nombre = "";
+            bool enPalabra = false;
+            for (int i = 0; i < lectura.Length; i++)
+            {
+                char c = lectura[i];
+                if (c == ' ')
+                {
+                    nombre += ' ';
+                    enPalabra = false;
+                }
+                else
+                {
+                    if (!enPalabra)
+                    {
+                        nombre += char.ToUpper(c);
+                        enPalabra = true;
+                    }
+                    else
+                    {
+                        nombre += char.ToLower(c);
+                    }
+                }
+            }
+            Console.WriteLine("Hola " + nombre);
+        }
+
+
+
+
+
+
+
+        static void EjercicioG()
+        {
+            int contador = 0;
+
+            for (int numero = 1; numero <= 100; numero++)
+            {
+                if (numero % 2 == 0)
+                {
+                    contador++;
+                }
+            }
+
+            Console.WriteLine("Hay " + contador + " numeros pares");
+        }
+
+
+
+
+
+        static void EjercicioH()
+        {
+            string opcion = "si";
+
+            while (opcion != "no")
+            {
+                Console.WriteLine("Escribi temperatura en celsius");
+                string lectura = Console.ReadLine();
+                int grados = Convert.ToInt32(lectura);
+
+
+                int resultado = (grados * 9 / 5) + 32;
+
+
+                Console.WriteLine("La temperatura en fahrenheit es " + resultado);
+
+                Console.WriteLine("Queres seguir? si/no");
+                opcion = Console.ReadLine();
+            }
+        }
+
+
+
+
+
+
+
+        static void EjercicioI()
+        {
+            Console.WriteLine("Escribi un numero");
+
+            string lectura = Console.ReadLine();
+            int numero = Convert.ToInt32(lectura);
+
+            bool esPrimo = true;
+
+            for (int i = 2; i < numero; i++)
+            {
+
+                if (numero % i == 0)
+                {
+                    esPrimo = false;
+                }
+            }
+
+
+            if (esPrimo)
+            {
+
+                Console.WriteLine("Es primmo");
+            }
+            else
+            {
+                Console.WriteLine("No es primo");
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+        static void EjercicioJ()
+        {
+            string[] nombres = new string[100];
+
+            int indice = 0;
+            string lectura = "";
+
+            while (lectura != "fin")
+            {
+                Console.WriteLine("Escribi un nombre");
+                lectura = Console.ReadLine();
+
+
+                if (lectura != "fin")
+                {
+                    nombres[indice] = lectura;
+                    indice++;
+                }
+            }
+
+            for (int i = 0; i < indice; i++)
+            {
+                Console.WriteLine("Hola " + nombres[i]);
+            }
+        }
+
+
+
+
+
+
+
+
+        static void EjercicioK()
+        {
+            string[] nombres = new string[100];
+            int indice = 0;
+            string lectura = "";
+
+            while (true)
+            {
+                Console.WriteLine("Escribi un nombre");
+                lectura = Console.ReadLine();
+                int contador = 0;
+
+                bool repetido = false;
+                for (int i = 0; i < indice; i++)
+                {
+                    if (nombres[i] == lectura)
+                    {
+                        repetido = true;
+                    }
+                    contador++;
+                }
+
+                if (repetido)
+                {
+                    Console.WriteLine("Ingresaste " + contador + " nombres antes del duplicado");
+                    break;
+                }
+                else
+                {
+                    nombres[indice] = lectura;
+                    indice++;
+                }
+            }
+        }
+
+
+
+
+
+
+
+        static void EjercicioL()
+        {
+            for (int numero = 100; numero <= 200; numero++)
+            {
+                if (numero % 7 == 0 && numero % 10 == 3)
+                {
+                    Console.WriteLine("El numero es " + numero);
+                }
+            }
+        }
+
+
+
+
+        static void EjercicioM()
+        {
+            int total = 0;
+            int cantidad = 0;
+
+            while (total <= 1000)
+            {
+                Console.WriteLine("Escribi un precio");
+                string lectura = Console.ReadLine();
+                int precio = Convert.ToInt32(lectura);
+
+
+                total += precio;
+                cantidad++;
+            }
+
+            Console.WriteLine("Cargaste " + cantidad + " productos");
+        }
+
+
+
+
+
+
+        static void EjercicioN()
+        {
+            Console.WriteLine("Escribi tu nombre");
+            string nombre = Console.ReadLine();
+
+
+            Console.WriteLine("Escribi tu edad");
+            string lectura = Console.ReadLine();
+
+            int edad = 0;
+
+            bool valido = true;
+
+
+
+
+
+            for (int i = 0; i < lectura.Length; i++)
+            {
+                if (lectura[i] < '0' || lectura[i] > '9')
+                {
+                    valido = false;
+                }
+            }
+
+            if (valido)
+            {
+
+                edad = Convert.ToInt32(lectura);
+
+
+                Console.WriteLine("Escribi tu mail");
+                string mail = Console.ReadLine();
+
+                if (mail.Contains("@"))
+
+                {
+                    Console.WriteLine("Formulario completado corectamente");
+                }
+                else
+                {
+                    Console.WriteLine("Mail no valido");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Edad no valida");
+            }
+
+        }
+
+
+
+
+        static void EjercicioO()
+        {
+            Console.WriteLine("Escribi un numero");
+            string lectura = Console.ReadLine();
+
+            for (int i = 0; i < lectura.Length; i++)
+            {
+
+                Console.WriteLine(lectura[i]);
+            }
+
+        }
+
+
+
+
+
+
+        static void EjercicioP()
+        {
+            int victoriasUsuario = 0;
+            int victoriasComputadora = 0;
+
+            string[] opciones = { "piedra", "papel", "tijera" };
+            Random azar = new Random();
+
+            for (int ronda = 1; ronda <= 3; ronda++)
+            {
+                Console.WriteLine("Escribi piedra, papel o tijera");
+                string lectura = Console.ReadLine();
+
+
+                string jugadaComputadora = opciones[azar.Next(0, 3)];
+
+                if (lectura == jugadaComputadora)
+                {
+                    Console.WriteLine("Empate");
+                }
+                else if ((lectura == "piedra" && jugadaComputadora == "tijera") ||
+                         (lectura == "papel" && jugadaComputadora == "piedra") ||
+                         (lectura == "tijera" && jugadaComputadora == "papel"))
+                {
+                    victoriasUsuario++;
+                    Console.WriteLine("Ganaste esta ronda");
+                }
+                else
+                {
+                    victoriasComputadora++;
+                    Console.WriteLine("Perdiste esta ronda");
+                }
+            }
+
+            if (victoriasUsuario > victoriasComputadora)
+            {
+                Console.WriteLine("Ganaste mas veces que la compuadora");
+            }
+            else if (victoriasUsuario < victoriasComputadora)
+            {
+                Console.WriteLine("La computadora gano mas veces");
+            }
+            else
+            {
+                Console.WriteLine("Empataron");
+            }
+
+        }
+
+
+
+
+
+
+        static void EjercicioQ()
+        {
+            int[] numeros = new int[10];
+            Random azar = new Random();
+            int contador = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                numeros[i] = azar.Next(1, 101);
+
+
+                if (numeros[i] > 50)
+                {
+                    contador++;
+                }
+            }
+
+            Console.WriteLine("Hay " + contador + " numeros mayores a 50");
+        }
+
+
+
+
+
+
+
+        static void EjercicioR()
+        {
+                        string[] nombres = new string[5];
+            int[] notas = new int[5];
+
+            int suma = 0;
+            int mejorNota = 0;
+            string mejorNombre = "";
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Escribi un nombre");
+                nombres[i] = Console.ReadLine();
+
+
+                Console.WriteLine("Escribi una nota");
+                string lectura = Console.ReadLine();
+                notas[i] = Convert.ToInt32(lectura);
+
+                suma += notas[i];
+
+                if (notas[i] > mejorNota)
+                {
+                    mejorNota = notas[i];
+                    mejorNombre = nombres[i];
+                }
+            }
+
+            double promedio = suma / 5.0;
+
+            Console.WriteLine("El promedio es " + promedio);
+            Console.WriteLine("La mejor nota la tuvo " + mejorNombre);
+        }
+
+
+
+
+
+
+        static void EjercicioS()
+        {
+            char[] letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+
+            for (int i = letras.Length - 1; i >= 0; i--)
+            {
+
+                Console.WriteLine(letras[i]);
+            }
+
+            Console.WriteLine("Fin");
+        }
+
+
+
+
+
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(" ");
+            bool salir = false;
+            while (!salir)
+            {
+                Console.WriteLine("MENU DE EJERCICIOS");
+                Console.WriteLine("A-S. Ejercicios");
+                Console.WriteLine("Z. Salir");
+                Console.Write("Ingrese una letra: ");
+
+                string opcion = Console.ReadLine().ToUpper();
+
+                if (opcion == "A") EjercicioA();
+                else if (opcion == "B") EjercicioB();
+                else if (opcion == "C") EjercicioC();
+                else if (opcion == "D") EjercicioD();
+                else if (opcion == "E") EjercicioE();
+                else if (opcion == "F") EjercicioF();
+                else if (opcion == "G") EjercicioG();
+                else if (opcion == "H") EjercicioH();
+                else if (opcion == "I") EjercicioI();
+                else if (opcion == "J") EjercicioJ();
+                else if (opcion == "K") EjercicioK();
+                else if (opcion == "L") EjercicioL();
+                else if (opcion == "M") EjercicioM();
+                else if (opcion == "N") EjercicioN();
+                else if (opcion == "O") EjercicioO();
+                else if (opcion == "P") EjercicioP();
+                else if (opcion == "Q") EjercicioQ();
+                else if (opcion == "R") EjercicioR();
+                else if (opcion == "S") EjercicioS();
+                else if (opcion == "Z") salir = true;
+                else Console.WriteLine("Opcion no valida");
+
+                
+            }
+            Console.WriteLine(" ");
+        }
+    }
+}

@@ -1,0 +1,39 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.Write("Ingresa tu peso en kg: ");
+            string lecturaPeso = Console.ReadLine();
+            double peso = Convert.ToDouble(lecturaPeso);
+
+            Console.Write("Ingrese su altura en metros: ");
+            string lecturaAltura = Console.ReadLine();
+            double altura = Convert.ToDouble(lecturaAltura);
+
+
+            double imc = peso / (altura * altura);
+
+            if (imc < 18.5)
+            {
+                Console.WriteLine("Bajo peso");
+            }
+            else if (imc < 25)
+            {
+                Console.WriteLine("Normal");
+            }
+            else if (imc < 30)
+            {
+                Console.WriteLine("Sobrepeso");
+            }
+            else
+            {
+                Console.WriteLine("Obesidad");
+            }
+
+
+        }
+    }
+}

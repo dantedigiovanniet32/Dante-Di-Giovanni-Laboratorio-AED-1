@@ -1,0 +1,25 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Ingresa un numero: ");
+            string lectura = Console.ReadLine();
+            int numero = Convert.ToInt32(lectura);
+
+            if (numero % 2 == 0)
+            {
+                Console.WriteLine("par");
+            }
+            else
+            {
+                Console.WriteLine("impar");
+            }
+
+
+
+
+        }
+    }
+}

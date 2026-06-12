@@ -1,0 +1,51 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int votos1 = 0;
+            int votos2 = 0;
+            int votos3 = 0;
+
+            string lectura = "";
+
+            while (lectura != "terminar")
+            {
+                Console.WriteLine("Opciones: 1, 2, 3");
+                lectura = Console.ReadLine();
+
+                if (lectura == "1")
+                {
+                    votos1++;
+                }
+                else if (lectura == "2")
+                {
+                    votos2++;
+                }
+                else if (lectura == "3")
+                {
+                    votos3++;
+                }
+            }
+
+            if (votos1 > votos2 && votos1 > votos3)
+            {
+                Console.WriteLine("Gano la opcion 1");
+            }
+            else if (votos2 > votos1 && votos2 > votos3)
+            {
+                Console.WriteLine("Gano la opcion 2");
+            }
+            else if (votos3 > votos1 && votos3 > votos2)
+            {
+                Console.WriteLine("Gano la opcion 3");
+            }
+            else
+            {
+                Console.WriteLine("Empate");
+            }
+
+        }
+    }
+}

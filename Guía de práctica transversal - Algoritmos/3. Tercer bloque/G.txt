@@ -1,0 +1,42 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            Random azar = new Random();
+            int secreto = azar.Next(1, 101);
+
+            int intentos = 0;
+            int numero = -1;
+
+
+
+            while (numero != secreto)
+            {
+
+                Console.Write("Adivina el numero: ");
+                string lectura = Console.ReadLine();
+                numero = Convert.ToInt32(lectura);
+                intentos++;
+
+                if (numero < secreto)
+                {
+                    Console.WriteLine("El numero es mas grande");
+                }
+                else if (numero > secreto)
+                {
+                    Console.WriteLine("El numero es mas chico");
+                }
+
+            }
+
+            Console.WriteLine("Adivinaste en " + intentos + " intentos");
+
+
+
+        }
+    }
+}

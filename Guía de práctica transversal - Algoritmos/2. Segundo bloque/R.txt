@@ -1,0 +1,43 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] nombres = new string[5];
+            int[] notas = new int[5];
+
+            int suma = 0;
+            int mejorNota = 0;
+            string mejorNombre = "";
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Escribi un nombre");
+                nombres[i] = Console.ReadLine();
+
+
+                Console.WriteLine("Escribi una nota");
+                string lectura = Console.ReadLine();
+                notas[i] = Convert.ToInt32(lectura);
+
+                suma += notas[i];
+
+                if (notas[i] > mejorNota)
+                {
+                    mejorNota = notas[i];
+                    mejorNombre = nombres[i];
+                }
+            }
+
+            double promedio = suma / 5.0;
+
+            Console.WriteLine("El promedio es " + promedio);
+            Console.WriteLine("La mejor nota la tuvo " + mejorNombre);
+
+
+
+
+        }
+    }
+}

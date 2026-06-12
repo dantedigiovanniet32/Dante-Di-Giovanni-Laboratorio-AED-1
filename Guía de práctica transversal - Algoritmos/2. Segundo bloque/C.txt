@@ -1,0 +1,16 @@
+int cantidad = 20;
+
+int a = 0;
+int b = 1;
+
+Console.WriteLine("Primeros 20 numeros de Fibonachi");
+//La sucesión de Fibonacci es una serie infinita de números naturales donde cada número es la suma de los dos anteriores
+
+for (int i = 0; i < cantidad; i++)
+{
+    Console.WriteLine(a);
+    int siguiente = a + b;
+    a = b;
+    b = siguiente;
+
+}

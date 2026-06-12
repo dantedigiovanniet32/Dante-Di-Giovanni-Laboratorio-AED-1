@@ -1,0 +1,50 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int saldo = 1000;
+            string lectura = "";
+
+            while (lectura != "salir")
+            {
+                Console.WriteLine("Saldo: " + saldo);
+                Console.WriteLine("Elegi: depositar, retirar, salir");
+                lectura = Console.ReadLine();
+
+
+
+                if (lectura == "depositar")
+                {
+                    Console.Write("Cuanto queres depositar: ");
+                    string lectura2 = Console.ReadLine();
+                    int monto = Convert.ToInt32(lectura2);
+                    saldo = saldo + monto;
+                }
+
+
+                else if (lectura == "retirar")
+                {
+
+                    Console.Write("Cuanto queres retirar: ");
+                    string lectura3 = Console.ReadLine();
+                    int monto = Convert.ToInt32(lectura3);
+
+                    if (monto <= saldo)
+                    {
+                        saldo = saldo - monto;
+                    }
+                    else
+                    {
+
+                        Console.WriteLine("No podes retirar mas de lo que tenes");
+                    }
+                }
+            }
+
+
+
+        }
+    }
+}

@@ -1,0 +1,39 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string contrasenaSecreta = "password123";
+
+            Console.WriteLine("Adivina la contraseña secreta Tenes 5 intentos.");
+            for (int intento = 1; intento <= 5; intento++)
+            {
+
+                Console.Write("Ingresa la contraseña: ");
+                string lectura = Console.ReadLine();
+                if (lectura == contrasenaSecreta)
+                {
+                    Console.WriteLine("Felicitaciones adivinaste la contrasñea");
+                    break;
+
+                }
+                else
+                {
+
+                    int restante = 5 - intento;
+                    if (restante > 0)
+                    {
+                        Console.WriteLine("No es correcta. Te quedan " + restante + " intentos");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No le pegaste. Se terminaron los intentos");
+                        Console.WriteLine("La contraseña era: " + contrasenaSecreta);
+                    }
+                }
+            }
+
+        }
+    }
+}

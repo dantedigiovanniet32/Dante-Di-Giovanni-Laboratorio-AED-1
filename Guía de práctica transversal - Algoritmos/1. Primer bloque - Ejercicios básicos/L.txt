@@ -1,0 +1,19 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingresa numeros de a uno hasta pasar 100");
+            int suma = 0;
+            int lectura = 0;
+            while (suma <= 100)
+            {
+                lectura = Convert.ToInt32(Console.ReadLine());
+                suma = suma + lectura;
+            }
+            Console.WriteLine("Pasaste los 100!");
+            Console.WriteLine($"Total acumulado: {suma}");
+        }
+    }
+}

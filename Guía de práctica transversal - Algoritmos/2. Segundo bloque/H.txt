@@ -1,0 +1,28 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string opcion = "si";
+
+            while (opcion != "no")
+            {
+                Console.WriteLine("Escribi temperatura en celsius");
+                string lectura = Console.ReadLine();
+                int grados = Convert.ToInt32(lectura);
+
+
+                int resultado = (grados * 9 / 5) + 32;
+
+
+                Console.WriteLine("La temperatura en fahrenheit es " + resultado);
+
+                Console.WriteLine("Queres seguir? si/no");
+                opcion = Console.ReadLine();
+            }
+
+
+        }
+    }
+}

@@ -1,0 +1,19 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Cuenta regresiva: ");
+            for (int i = 10; i >= 1; i--)
+            {
+                Console.WriteLine(i);
+
+            }
+
+
+            Console.WriteLine("oa");
+        }
+    }
+}

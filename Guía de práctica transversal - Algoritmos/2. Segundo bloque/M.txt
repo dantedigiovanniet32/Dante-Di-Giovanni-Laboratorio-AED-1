@@ -1,0 +1,26 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int total = 0;
+            int cantidad = 0;
+
+            while (total <= 1000)
+            {
+                Console.WriteLine("Escribi un precio");
+                string lectura = Console.ReadLine();
+                int precio = Convert.ToInt32(lectura);
+
+
+                total += precio;
+                cantidad++;
+            }
+
+            Console.WriteLine("Cargaste " + cantidad + " productos");
+
+
+        }
+    }
+}

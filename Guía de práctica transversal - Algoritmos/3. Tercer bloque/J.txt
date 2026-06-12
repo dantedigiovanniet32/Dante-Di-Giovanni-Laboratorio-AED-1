@@ -1,0 +1,38 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string usuario = "messi";
+            string contra = "1234";
+
+            int intentos = 0;
+            bool acceso = false;
+
+            while (intentos < 3 && !acceso)
+            {
+                Console.Write("Nombre de usuario: ");
+                string lecturaUsuario = Console.ReadLine();
+
+                Console.Write("Contraseña: ");
+                string lecturaContra = Console.ReadLine();
+
+                if (lecturaUsuario == usuario && lecturaContra == contra)
+                {
+                    Console.WriteLine("Bienbenido " + lecturaUsuario);
+                    acceso = true;
+                }
+                else
+                {
+                    Console.WriteLine("Datos incorrectos");
+                    intentos++;
+                }
+            }
+
+
+
+        }
+    }
+}

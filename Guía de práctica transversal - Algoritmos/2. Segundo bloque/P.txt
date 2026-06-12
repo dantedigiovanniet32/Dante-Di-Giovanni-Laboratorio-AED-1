@@ -1,0 +1,56 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int victoriasUsuario = 0;
+            int victoriasComputadora = 0;
+
+            string[] opciones = { "piedra", "papel", "tijera" };
+            Random azar = new Random();
+
+            for (int ronda = 1; ronda <= 3; ronda++)
+            {
+                Console.WriteLine("Escribi piedra, papel o tijera");
+                string lectura = Console.ReadLine();
+
+
+                string jugadaComputadora = opciones[azar.Next(0, 3)];
+
+                if (lectura == jugadaComputadora)
+                {
+                    Console.WriteLine("Empate");
+                }
+                else if ((lectura == "piedra" && jugadaComputadora == "tijera") ||
+                         (lectura == "papel" && jugadaComputadora == "piedra") ||
+                         (lectura == "tijera" && jugadaComputadora == "papel"))
+                {
+                    victoriasUsuario++;
+                    Console.WriteLine("Ganaste esta ronda");
+                }
+                else
+                {
+                    victoriasComputadora++;
+                    Console.WriteLine("Perdiste esta ronda");
+                }
+            }
+
+            if (victoriasUsuario > victoriasComputadora)
+            {
+                Console.WriteLine("Ganaste mas veces que la compuadora");
+            }
+            else if (victoriasUsuario < victoriasComputadora)
+            {
+                Console.WriteLine("La computadora gano mas veces");
+            }
+            else
+            {
+                Console.WriteLine("Empataron");
+            }
+
+
+
+        }
+    }
+}

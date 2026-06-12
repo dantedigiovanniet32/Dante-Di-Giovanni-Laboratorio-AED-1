@@ -1,0 +1,44 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string lectura = "";
+
+            while (lectura != "agusfortnite2008")
+            {
+                Console.Write("Ingresa una frase: ");
+                lectura = Console.ReadLine();
+
+
+
+
+                if (lectura != "agusfortnite2008")
+                {
+
+
+                    string fraseA = lectura.Replace("a", "a").Replace("e", "a").Replace("i", "a").Replace("o", "a").Replace("u", "a");
+                    Console.WriteLine(fraseA);
+
+                    string fraseE = lectura.Replace("a", "e").Replace("e", "e").Replace("i", "e").Replace("o", "e").Replace("u", "e");
+                    Console.WriteLine(fraseE);
+
+                    string fraseI = lectura.Replace("a", "i").Replace("e", "i").Replace("i", "i").Replace("o", "i").Replace("u", "i");
+                    Console.WriteLine(fraseI);
+
+                    string fraseO = lectura.Replace("a", "o").Replace("e", "o").Replace("i", "o").Replace("o", "o").Replace("u", "o");
+                    Console.WriteLine(fraseO);
+
+                    string fraseU = lectura.Replace("a", "u").Replace("e", "u").Replace("i", "u").Replace("o", "u").Replace("u", "u");
+                    Console.WriteLine(fraseU);
+
+
+                }
+            }
+
+
+        }
+    }
+}

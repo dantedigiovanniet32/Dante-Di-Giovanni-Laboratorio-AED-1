@@ -1,0 +1,29 @@
+Console.Write("Ingresa nombre: ");
+string lectura = Console.ReadLine();
+
+
+string nombre = "";
+bool enPalabra = false;
+
+for (int i = 0; i < lectura.Length; i++)
+{
+    char c = lectura[i];
+    if (c == ' ')
+    {
+        nombre += ' ';
+        enPalabra = false;
+    }
+    else
+    {
+        if (!enPalabra)
+        {
+            nombre += char.ToUpper(c);
+            enPalabra = true;
+        }
+        else
+        {
+            nombre += char.ToLower(c);
+        }
+    }
+}
+Console.WriteLine("Hola " + nombre);

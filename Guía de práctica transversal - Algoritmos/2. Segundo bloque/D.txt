@@ -1,0 +1,36 @@
+Console.Write("Elegi la operacion (suma, resta, multiplicacion, division): ");
+string operacion = Console.ReadLine();
+
+
+Console.Write("Ingresa el primer numero: ");
+
+int numero1 = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Ingresa el segundo numero: ");
+
+int numero2 = Convert.ToInt32(Console.ReadLine());
+
+
+double resultado = 0;
+
+
+string op = operacion.ToLower();
+if (op == "suma" || op == "+")
+{
+    resultado = numero1 + numero2;
+}
+else if (op == "resta" || op == "-")
+{
+    resultado = numero1 - numero2;
+}
+else if (op == "multiplicacion" || op == "*" || op == "multiplicar")
+{
+    resultado = numero1 * numero2;
+}
+else if (op == "division" || op == "/")
+{
+    resultado = (double)numero1 / numero2;
+}
+
+Console.WriteLine("");
+Console.WriteLine("El resutlado es: " + resultado);
