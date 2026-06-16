@@ -1,0 +1,44 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            Console.Write("Ingresa un numero grande: ");
+            int numero1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Ingresa otro: ");
+            int numero2 = Convert.ToInt32(Console.ReadLine());
+
+
+
+            try
+            {
+
+                checked
+                {
+
+                    int suma = numero1 + numero2;
+                    Console.WriteLine("La suma es: " + suma);
+
+                }
+            }
+            catch (FormatException)
+            {
+
+                Console.WriteLine("Numero incorrrecto");
+
+            }
+            catch (OverflowException)
+            {
+
+                Console.WriteLine("La suma paso el limite");
+
+            }
+
+
+        }
+    }
+}

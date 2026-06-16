@@ -1,0 +1,79 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            Console.Write("Ingresa una frase: ");
+            string frase = Console.ReadLine();
+
+            try
+            {
+                // Cant caracteres
+                Console.WriteLine("Cantidad caracteres: " + frase.Length);
+
+                //Cant palabras
+                string[] palabras = frase.Split(' ');
+                Console.WriteLine("Cantidad de palabras: " + palabras.Length);
+
+                // cantidad vocales
+                int cantVocales = 0;
+                for (int i = 0; i < frase.Length; i++)
+                {
+
+                    char letra = char.ToLower(frase[i]);
+                    if ("aeiou".Contains(letra))
+                    {
+                        cantVocales++;
+                    }
+
+                }
+                Console.WriteLine("Cantidad vocales: " + cantVocales);
+
+
+
+                //Pide posicion
+                Console.Write("Ingrese una posicion: ");
+                int pos = Convert.ToInt32(Console.ReadLine());
+
+                char caracter = frase[pos];
+                Console.WriteLine("Caracter: " + caracter);
+
+
+                // 100 dividido por numero
+                Console.Write("Ingrese un numero: ");
+                int num = Convert.ToInt32(Console.ReadLine());
+
+                int resultado = 100 / num;
+                Console.WriteLine("100 dividido numero: " + resultado);
+
+            }
+            //capturaciones
+            catch (FormatException)
+            {
+
+                Console.WriteLine("Numero no correcto");
+
+            }
+            catch (IndexOutOfRangeException)
+            {
+
+                Console.WriteLine("La posicion no existe");
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("No se puede dividir por cero");
+            }
+            catch (ArgumentException)
+            {
+
+                Console.WriteLine("Error");
+
+            }
+
+
+        }
+    }
+}

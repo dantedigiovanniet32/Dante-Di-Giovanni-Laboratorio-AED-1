@@ -1,0 +1,30 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.Write("Escribi una palabra: ");
+            string lectura = Console.ReadLine();
+
+            
+
+            try
+            {
+                char primera = lectura[0];
+                char ultima = lectura[lectura.Length - 1];
+
+                Console.WriteLine("Primera letra: " + primera);
+                Console.WriteLine("Ultima letra: " + ultima);
+
+            }
+            catch
+            {
+
+                Console.WriteLine("No pusiste ninguna palabra");
+            }
+
+        }
+    }
+}

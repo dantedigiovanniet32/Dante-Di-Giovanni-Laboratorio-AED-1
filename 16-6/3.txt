@@ -1,0 +1,27 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.Write("Ingresa una frase:  ");
+            string lectura = Console.ReadLine();
+
+
+            int contador = 0;
+
+            foreach (char letra in lectura)
+            {
+
+                if ("aeiouAEIOU".Contains(letra))
+                {
+                    contador++;
+                }
+            }
+
+            Console.WriteLine("La frase tiene " + contador + " vocales");
+
+        }
+    }
+}

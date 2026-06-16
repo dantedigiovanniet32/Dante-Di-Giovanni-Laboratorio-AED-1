@@ -1,0 +1,41 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            Console.Write("Ingresa edad: ");
+            string lectura = Console.ReadLine();
+
+
+            try
+            {
+
+                int edad = Convert.ToInt32(lectura);
+
+
+                if (edad >= 1 && edad <= 120)
+                {
+                    Console.WriteLine("Es valido");
+                }
+                else
+                {
+
+                    Console.WriteLine("Fuera de rango");
+
+                }
+
+            }
+            catch (FormatException)
+            {
+
+                Console.WriteLine("Numero incorrecto");
+
+            }
+
+
+        }
+    }
+}

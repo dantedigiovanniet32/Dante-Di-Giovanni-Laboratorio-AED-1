@@ -1,0 +1,28 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            Console.Write("Ingresa una palabra: ");
+            string lectura = Console.ReadLine();
+
+
+
+
+            string invertida = "";
+
+
+            for (int i = lectura.Length - 1; i >= 0; i--)
+            {
+                invertida = invertida + lectura[i];
+            }
+
+
+            Console.WriteLine("Palabra invertida: " + invertida);
+
+        }
+    }
+}

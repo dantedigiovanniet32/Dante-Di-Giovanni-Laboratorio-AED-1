@@ -1,0 +1,34 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.Write("Escribi el primer numero: ");
+            string lectura1 = Console.ReadLine();
+
+            Console.Write("Ingresa el segundo numero: ");
+            string lectura2 = Console.ReadLine();
+
+
+            try
+            {
+                int n1 = Convert.ToInt32(lectura1);
+                int n2 = Convert.ToInt32(lectura2);
+
+                int resultado = n1 / n2;
+                Console.WriteLine("El resultado es: " + resultado);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("No escribiste un numero corrrecto");
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("No podes dividir por cero");
+            }
+
+        }
+    }
+}

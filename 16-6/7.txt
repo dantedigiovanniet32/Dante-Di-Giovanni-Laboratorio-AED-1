@@ -1,0 +1,31 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.Write("Ingresa una frase: ");
+            string lectura1 = Console.ReadLine();
+
+            Console.Write("Ingresa una palabra: ");
+            string lectura2 = Console.ReadLine();
+
+
+
+
+            if (lectura1.Contains(lectura2))
+            {
+                Console.WriteLine("La palabra esta adentro de la frase");
+
+            }
+            else
+            {
+                Console.WriteLine("La palabra no esta en la frace");
+            }
+
+
+
+        }
+    }
+}

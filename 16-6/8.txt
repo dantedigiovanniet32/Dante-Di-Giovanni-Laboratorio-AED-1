@@ -1,0 +1,40 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.Write("Ingresa numeros separados por comas: ");
+            string lectura = Console.ReadLine();
+
+
+            try
+            {
+
+                string[] partes = lectura.Split(',');
+                int suma = 0;
+
+                foreach (string parte in partes)
+                {
+
+                    int numero = Convert.ToInt32(parte);
+                    suma = suma + numero;
+
+                }
+
+
+                Console.WriteLine("Suma total: " + suma);
+
+            }
+            catch (FormatException)
+            {
+
+                Console.WriteLine("Algunos valores incorrectos");
+
+            }
+
+
+        }
+    }
+}

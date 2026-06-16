@@ -1,0 +1,21 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Escribi una palabra: ");
+            string lectura = Console.ReadLine();
+
+
+            Console.WriteLine("Mayusculas: " + lectura.ToUpper());
+            Console.WriteLine("Minusculas: " + lectura.ToLower());
+
+
+            int carac = lectura.Length;
+
+            Console.WriteLine("La palabra tiene " + carac + " caracteres");
+
+        }
+    }
+}

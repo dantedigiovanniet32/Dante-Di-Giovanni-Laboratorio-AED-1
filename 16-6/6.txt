@@ -1,0 +1,39 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            Console.Write("Ingrese una palabra: ");
+            string lectura = Console.ReadLine();
+
+            Console.Write("Ingrese una posicion: ");
+            string lectura2 = Console.ReadLine();
+
+            try
+            {
+
+                int posicion = Convert.ToInt32(lectura2);
+                char letra = lectura[posicion];
+                Console.WriteLine("Caracter en la posicion: " + letra);
+
+            }
+            catch (FormatException)
+            {
+
+                Console.WriteLine("Numero no valido");
+
+            }
+            catch (IndexOutOfRangeException)
+
+            {
+                Console.WriteLine("La posicion no existe en la palabra");
+
+            }
+
+
+        }
+    }
+}
