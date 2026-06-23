@@ -1,0 +1,110 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] numeros = new int[5];
+            bool salir = false;
+
+
+
+
+
+
+
+
+            while (!salir)
+            {
+                Console.WriteLine("MENU");
+                Console.WriteLine("1. Cargar el vector");
+                Console.WriteLine("2. Mostrar el vector");
+                Console.WriteLine("3. Buscar un numero");
+                Console.WriteLine("4. Sumar todos los elementos");
+                Console.WriteLine("5. Salir");
+                Console.Write("Ingresa opcion: ");
+
+                int lectura = Convert.ToInt32(Console.ReadLine());
+
+                
+                if (lectura == 1)
+                {
+                    //Cargar  vector
+
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Console.Write("Ingresa un numero: ");
+                        int valor = Convert.ToInt32(Console.ReadLine());
+                        numeros[i] = valor;
+                    }
+                }
+
+                else if (lectura == 2)
+                {
+                    //mostrar
+
+                    Console.WriteLine("El vector tiene:");
+                    foreach (int n in numeros)
+                    {
+                        Console.WriteLine(n);
+                    }
+                }
+
+                else if (lectura == 3)
+                {
+                    // buscar
+
+                    Console.Write("Numero a buscar: ");
+                    int buscar = Convert.ToInt32(Console.ReadLine());
+                    bool encontrado = false;
+                    int posicion = -1;
+
+                    for (int i = 0; i < numeros.Length; i++)
+                    {
+                        if (numeros[i] == buscar)
+                        {
+                            encontrado = true;
+                            posicion = i;
+                            break;
+                        }
+                    }
+
+                    if (encontrado)
+                    {
+                        Console.WriteLine("El numero esta en la posicion " + posicion);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Numero no encontardo");
+                    }
+                }
+
+                else if (lectura == 4)
+                {
+
+                    // Sumar elementos
+
+                    int suma = 0;
+                    foreach (int n in numeros)
+                    {
+                        suma += n;
+                    }
+                    Console.WriteLine("La suma total es: " + suma);
+                }
+                else if (lectura == 5)
+                {
+                    salir = true;
+                }
+
+
+
+
+
+            }
+
+
+
+
+        }
+    }
+}

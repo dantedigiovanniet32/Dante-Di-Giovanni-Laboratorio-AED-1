@@ -1,0 +1,37 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int[] notas = new int[5];
+            int suma = 0;
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write("Ingresa la nota: ");
+                int lectura = Convert.ToInt32(Console.ReadLine());
+
+                notas[i] = lectura;
+                suma += lectura;
+
+            }
+
+
+            double promedio = (double)suma / 5;
+
+
+            if (promedio >= 6)
+            {
+                Console.WriteLine("Aprobado");
+            }
+            else
+            {
+                Console.WriteLine("Reprobado");
+            }
+
+
+        }
+    }
+}

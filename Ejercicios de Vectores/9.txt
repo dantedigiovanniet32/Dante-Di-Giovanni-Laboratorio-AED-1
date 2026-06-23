@@ -1,0 +1,33 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            string[] palabras = new string[5];
+            string resultado = "";
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write("Ingresa una palabra: ");
+                palabras[i] = Console.ReadLine();
+
+            }
+
+
+            foreach (string palabra in palabras)
+            {
+                if (palabra.Length > 4)
+                {
+                    resultado += palabra + " ";
+                }
+            }
+
+            Console.WriteLine("Palabras con mas de 4 letras: " + resultado);  
+
+
+        }
+    }
+}

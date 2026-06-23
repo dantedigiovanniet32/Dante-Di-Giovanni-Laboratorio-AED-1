@@ -1,0 +1,30 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string[] colores = { "Rojo", "Verde", "Azul", "Amarillo", "Negro" };
+
+            Console.Write("Decime un numero del 0 al 4: ");
+            int lectura = Convert.ToInt32(Console.ReadLine());
+
+
+            for (int i = lectura; i < colores.Length - 1; i++)
+            {
+                colores[i] = colores[i + 1];
+            }
+
+            colores[colores.Length - 1] = "";
+
+            Console.WriteLine("Colores actualizados:");
+            foreach (string c in colores)
+            {
+                Console.WriteLine(c);
+            }
+
+
+        }
+    }
+}
