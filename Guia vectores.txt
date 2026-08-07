@@ -1,0 +1,336 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+      
+            int[] vector = new int[6];
+            int lectura;
+            
+            for (int i = 0; i < 6; i++)
+            {
+                Console.Write("Ingresa el elemento " + (i + 1) + ": ");
+                lectura = Convert.ToInt32(Console.ReadLine());
+                vector[i] = lectura;
+            }
+            
+            Console.WriteLine("Los elemtos pares del vector son: ");
+            
+            for (int i = 0; i < 6; i++)
+            {
+                if (vector[i] % 2 == 0)
+                {
+                    Console.WriteLine(vector[i]);
+                }
+            }
+    
+        }
+    }
+}
+
+
+
+
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+      
+            int[] vector = new int[6];
+            int lectura;
+            
+            for (int i = 0; i < 6; i++)
+            {
+                Console.Write("Ingresa el elemento " + (i + 1) + ": ");
+                lectura = Convert.ToInt32(Console.ReadLine());
+                vector[i] = lectura;
+            }
+            
+            Console.WriteLine("Los elementos de las posisiones pares del vector son: ");
+            
+            for (int i = 0; i < 6; i++)
+            {
+                if (i % 2 == 1)
+                {
+                    Console.WriteLine(vector[i]);
+                }
+            }
+        
+        }
+    }
+}
+
+
+
+
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+      
+            int[] vectorA = new int[10];
+            int[] vectorB = new int[10];
+            int[] vectorC = new int[10];
+            int lectura;
+            int pos = 0;
+            
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write("Ingresa el elemento " + (i + 1) + " del primer vector: ");
+                lectura = Convert.ToInt32(Console.ReadLine());
+                vectorA[i] = lectura;
+            }
+            
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write("Ingresa el elemento " + (i + 1) + " del segundo vector: ");
+                lectura = Convert.ToInt32(Console.ReadLine());
+                vectorB[i] = lectura;
+            }
+            
+            for (int i = 0; i < 10; i = i + 2)
+            {
+                vectorC[pos] = vectorA[i];
+                pos = pos + 1;
+            }
+            
+            for (int i = 1; i < 10; i = i + 2)
+            {
+                vectorC[pos] = vectorB[i];
+                pos = pos + 1;
+            }
+            
+            Console.WriteLine("El tercer vectro es: ");
+            
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(vectorC[i]);
+            }
+      
+        }
+    }
+}
+
+
+
+
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+      
+            int n;
+            int lectura;
+            int aux;
+            
+            Console.Write("Ingresa la cantida de elementos del vector: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            int[] vector = new int[n];
+            
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("Ingresa el elemento " + (i + 1) + ": ");
+                lectura = Convert.ToInt32(Console.ReadLine());
+                vector[i] = lectura;
+            }
+            
+            for (int i = 0; i < n / 2; i++)
+            {
+                aux = vector[i];
+                vector[i] = vector[n - 1 - i];
+                vector[n - 1 - i] = aux;
+            }
+            
+            Console.WriteLine("El vector invertido es: ");
+            
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine(vector[i]);
+            }
+          
+        }
+    }
+}
+
+
+
+
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+      
+            int[] vector = new int[10];
+            int lectura;
+            int resultado = 4;
+            bool todosIguales = true;
+            bool creciente = true;
+            bool decreciente = true;
+            
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write("Ingresa el elemento " + (i + 1) + ": ");
+                lectura = Convert.ToInt32(Console.ReadLine());
+                vector[i] = lectura;
+            }
+            
+            for (int i = 1; i < 10; i++)
+            {
+                if (vector[i] != vector[0])
+                {
+                    todosIguales = false;
+                }
+                if (vector[i] <= vector[i - 1])
+                {
+                    creciente = false;
+                }
+                if (vector[i] >= vector[i - 1])
+                {
+                    decreciente = false;
+                }
+            }
+            
+            if (todosIguales)
+            {
+                resultado = 1;
+            }
+            else if (creciente)
+            {
+                resultado = 2;
+            }
+            else if (decreciente)
+            {
+                resultado = 3;
+            }
+            else
+            {
+                resultado = 4;
+            }
+            
+            Console.WriteLine("El resutlado es: " + resultado);
+            
+        }
+    }
+}
+
+
+
+
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+      
+            int[] anios = new int[15];
+            int[] bisiestos = new int[15];
+            int lectura;
+            int contador = 0;
+            
+            for (int i = 0; i < 15; i++)
+            {
+                Console.Write("Ingresa el anio " + (i + 1) + ": ");
+                lectura = Convert.ToInt32(Console.ReadLine());
+                anios[i] = lectura;
+            }
+            
+            for (int i = 0; i < 15; i++)
+            {
+                if ((anios[i] % 4 == 0 && anios[i] % 100 != 0) || anios[i] % 400 == 0)
+                {
+                    bisiestos[contador] = anios[i];
+                    contador = contador + 1;
+                }
+            }
+            
+            Console.WriteLine("Los anios biciestos son: ");
+            
+            for (int i = 0; i < contador; i++)
+            {
+                Console.WriteLine(bisiestos[i]);
+            }
+            
+        }
+    }
+}
+
+
+
+
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+      
+            int n;
+            double lectura;
+            double auxPrecio;
+            string auxProducto;
+            
+            Console.Write("Ingresa la cantidad de productos: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            
+            string[] productos = new string[n];
+            double[] precios = new double[n];
+            
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("Ingresa el nombre del producto " + (i + 1) + ": ");
+                productos[i] = Console.ReadLine();
+                Console.Write("Ingresa el preio del producto " + (i + 1) + ": ");
+                lectura = Convert.ToDouble(Console.ReadLine());
+                precios[i] = lectura;
+            }
+            
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = i + 1; j < n; j++)
+                {
+                    if (precios[i] > precios[j])
+                    {
+                        auxPrecio = precios[i];
+                        precios[i] = precios[j];
+                        precios[j] = auxPrecio;
+                        auxProducto = productos[i];
+                        productos[i] = productos[j];
+                        productos[j] = auxProducto;
+                    }
+                }
+            }
+            
+            Console.WriteLine("CODIGO PRODUCTO - PRECIO");
+            
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine((i + 1) + " " + productos[i] + " - " + precios[i]);
+            }
+            
+            Console.WriteLine("Precios actualizados con el aumento del 15%: ");
+            
+            for (int i = 0; i < n; i++)
+            {
+                precios[i] = precios[i] * 1.15;
+                Console.WriteLine((i + 1) + " " + productos[i] + " - " + precios[i]);
+            }
+            
+        }
+    }
+}
