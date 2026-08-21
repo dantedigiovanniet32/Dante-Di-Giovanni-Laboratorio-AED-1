@@ -26,7 +26,7 @@ namespace ConsoleApp1
                 Console.Write("Ingresa el nombre (FIN para terminar): ");
                 lectura = Console.ReadLine();
 
-                if (lectura == "FIN")
+                if (lectura == "FIN" || lectura == "fin")
                 {
                     break;
                 }
