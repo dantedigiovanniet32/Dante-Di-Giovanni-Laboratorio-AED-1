@@ -1,0 +1,96 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        struct Alumno
+        {
+
+            public string nombre;
+            public int edad;
+            public double nota;
+
+        }
+
+        static void Main(string[] args)
+        {
+
+
+            Alumno[] alumnos = new Alumno[10];
+            string lectura;
+            int cantidad = 0;
+
+
+            while (cantidad < 10)
+            {
+
+                Console.Write("Ingresa el nombre (FIN para terminar): ");
+                lectura = Console.ReadLine();
+
+                if (lectura == "FIN")
+                {
+                    break;
+                }
+
+                alumnos[cantidad].nombre = lectura;
+
+                Console.Write("Ingresa la edad: ");
+                lectura = Console.ReadLine();
+                alumnos[cantidad].edad = Convert.ToInt32(lectura);
+
+                Console.Write("Ingresar la nota: ");
+                lectura = Console.ReadLine();
+                alumnos[cantidad].nota = Convert.ToDouble(lectura);
+
+                cantidad++;
+            }
+
+            Console.WriteLine("");
+
+            if (cantidad > 0)
+            {
+                Console.WriteLine("Alumnos cargados:");
+
+                for (int i = 0; i < cantidad; i++)
+                {
+                    Console.WriteLine(alumnos[i].nombre + " - " + alumnos[i].edad + " años - nota: " + alumnos[i].nota);
+                }
+
+                double suma = 0;
+                int posMayor = 0;
+                int posMenor = 0;
+
+                for (int i = 0; i < cantidad; i++)
+                {
+                    suma = suma + alumnos[i].nota;
+
+                    if (alumnos[i].nota > alumnos[posMayor].nota)
+                    {
+                        posMayor = i;
+                    }
+
+                    if (alumnos[i].nota < alumnos[posMenor].nota)
+                    {
+                        posMenor = i;
+                    }
+                }
+
+                double promedio = suma / cantidad;
+
+
+                Console.WriteLine("");
+
+                Console.WriteLine("Promedio de notas: " + promedio);
+                Console.WriteLine("Mayor: " + alumnos[posMayor].nombre + " con " + alumnos[posMayor].nota);
+                Console.WriteLine("Menor: " + alumnos[posMenor].nombre + " con " + alumnos[posMenor].nota);
+
+
+            }
+            else
+            {
+                Console.WriteLine("No se cargo ningun alumno");
+            }
+
+            Console.ReadKey();
+        }
+    }
+}

@@ -1,0 +1,60 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        struct Alumno
+        {
+            public string nombre;
+            public int edad;
+            public double nota;
+        }
+
+        static void Main(string[] args)
+        {
+            Alumno[] alumnos = new Alumno[5];
+            string lectura;
+
+            for (int i = 0; i < alumnos.Length; i++)
+            {
+                Console.Write("Nombre del alumno " + (i + 1) + ": ");
+                lectura = Console.ReadLine();
+                alumnos[i].nombre = lectura;
+
+                Console.Write("Edad: ");
+                lectura = Console.ReadLine();
+                alumnos[i].edad = Convert.ToInt32(lectura);
+
+                Console.Write("Nota: ");
+                lectura = Console.ReadLine();
+                alumnos[i].nota = Convert.ToDouble(lectura);
+            }
+
+
+
+            Alumno aux;
+
+            for (int i = 0; i < alumnos.Length - 1; i++)
+            {
+                for (int j = 0; j < alumnos.Length - 1 - i; j++)
+                {
+                    if (alumnos[j].nota > alumnos[j + 1].nota)
+                    {
+                        aux = alumnos[j];
+                        alumnos[j] = alumnos[j + 1];
+                        alumnos[j + 1] = aux;
+                    }
+                }
+            }
+
+            Console.WriteLine("");
+
+            Console.WriteLine("Ordenado menor a mayor:");
+
+            for (int i = 0; i < alumnos.Length; i++)
+            {
+                Console.WriteLine(alumnos[i].nombre + " - nota: " + alumnos[i].nota);
+            }
+
+        }
+    }
+}

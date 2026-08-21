@@ -1,0 +1,76 @@
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        struct Producto
+        {
+            public int codigo;
+            public string nombre;
+            public double precio;
+        }
+
+        static void Main(string[] args)
+        {
+            Producto[] productos = new Producto[10];
+            string lectura;
+
+
+
+            for (int i = 0; i < productos.Length; i++)
+            {
+                Console.WriteLine("Producto " + (i + 1));
+
+                Console.Write("Ingresa el codigo: ");
+                lectura = Console.ReadLine();
+                productos[i].codigo = Convert.ToInt32(lectura);
+
+                Console.Write("Ingresa el nombre: ");
+                lectura = Console.ReadLine();
+                productos[i].nombre = lectura;
+
+                Console.Write("Ingresa el precio: ");
+                lectura = Console.ReadLine();
+                productos[i].precio = Convert.ToDouble(lectura);
+            }
+
+            Console.WriteLine("");
+
+            for (int i = 0; i < productos.Length; i++)
+            {
+                Console.WriteLine(productos[i].codigo + " - " + productos[i].nombre + " - $" + productos[i].precio);
+            }
+
+
+            int posCaro = 0;
+            int posBarato = 0;
+            double suma = 0;
+
+            for (int i = 0; i < productos.Length; i++)
+            {
+                if (productos[i].precio > productos[posCaro].precio)
+                {
+                    posCaro = i;
+                }
+
+                if (productos[i].precio < productos[posBarato].precio)
+                {
+                    posBarato = i;
+                }
+
+                suma = suma + productos[i].precio;
+            }
+
+            double promedio = suma / productos.Length;
+
+
+
+            Console.WriteLine("");
+
+            Console.WriteLine("Producto mas caro: " + productos[posCaro].nombre);
+            Console.WriteLine("El mas barato: " + productos[posBarato].nombre);
+            Console.WriteLine("Promiedo: " + promedio);
+
+
+        }
+    }
+}
