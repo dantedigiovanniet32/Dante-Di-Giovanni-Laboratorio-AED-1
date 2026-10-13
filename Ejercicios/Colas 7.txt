@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Queue<string> cola = new Queue<string>();
+            int opcion = 0;
+            string lectura;
+
+            while (opcion != 5)
+            {
+                Console.WriteLine("1 Solicitar turno");
+                Console.WriteLine("2 Atender paciente");
+                Console.WriteLine("3 Consultar proximo paciente");
+                Console.WriteLine("4 Cantidad de pacientes esperando");
+                Console.WriteLine("5 Salir");
+                opcion = Convert.ToInt32(Console.ReadLine());
+
+                if (opcion == 1)
+                {
+                    Console.WriteLine("Ingresa el nombre del paciente");
+                    lectura = Console.ReadLine();
+                    cola.Enqueue(lectura);
+                    Console.WriteLine("Turno solisitado");
+                }
+
+                if (opcion == 2)
+                {
+                    Console.WriteLine("Atendiendo a: " + cola.Dequeue());
+                }
+                 
+                if (opcion == 3)
+                {
+                    Console.WriteLine("El proximo paciente es: " + cola.Peek());
+                }
+
+                if (opcion == 4)
+                {
+                    Console.WriteLine("Pacientes esperando: " + cola.Count);
+                }
+            }
+        }
+    }
+}

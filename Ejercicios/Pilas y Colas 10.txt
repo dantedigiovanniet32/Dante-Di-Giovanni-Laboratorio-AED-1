@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Stack<int> pila = new Stack<int>();
+            Queue<int> cola = new Queue<int>();
+            int lectura;
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Ingresa un numero");
+                lectura = Convert.ToInt32(Console.ReadLine());
+                pila.Push(lectura);
+                cola.Enqueue(lectura);
+            }
+
+            Console.WriteLine("Elementos de la pila:");
+            foreach (int numero in pila)
+            {
+                Console.WriteLine(numero);
+            }
+             
+            Console.WriteLine("Elementos de la cola:");
+            foreach (int numero in cola)
+            {
+                Console.WriteLine(numero);
+            }
+
+            Console.WriteLine("Salida de la pila:");
+            while (pila.Count > 0)
+            {
+                Console.WriteLine(pila.Pop());
+            }
+
+            Console.WriteLine("Salida de la cola:");
+            while (cola.Count > 0)
+            {
+                Console.WriteLine(cola.Dequeue());
+            }
+
+            Console.WriteLine("La estrucutra pila sale al reves que la cola");
+        }
+    }
+}

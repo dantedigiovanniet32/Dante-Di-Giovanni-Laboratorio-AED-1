@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Stack<int> pila = new Stack<int>();
+            int lectura;
+            int suma = 0;
+
+            Console.WriteLine("Ingresa numeros, termina con el 6");
+            lectura = Convert.ToInt32(Console.ReadLine());
+
+            while (lectura != 6)
+            {
+                if (lectura % 2 == 0)
+                {
+                    pila.Push(lectura);
+                    suma = suma + lectura;
+                }
+                lectura = Convert.ToInt32(Console.ReadLine());
+            }
+             
+            Console.WriteLine("Los numeros pares son los siguentes:");
+            foreach (int numero in pila)
+            {
+                Console.WriteLine(numero);
+            }
+
+            Console.WriteLine("Cantidad de pares: " + pila.Count);
+            Console.WriteLine("La suma es: " + suma);
+
+            Console.WriteLine("Se retiran en este orden:");
+            while (pila.Count > 0)
+            {
+                Console.WriteLine(pila.Pop());
+            }
+        }
+    }
+}

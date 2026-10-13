@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Stack<string> pila = new Stack<string>();
+
+            string lectura;
+            Console.WriteLine("Ingresa nombres, termina con FIN");
+            lectura = Console.ReadLine();
+
+            while (lectura != "FIN")
+            {
+                pila.Push(lectura);
+                lectura = Console.ReadLine();
+            }
+
+            Console.WriteLine("Cantidad de presonas: " + pila.Count);
+             
+            string[] arreglo = pila.ToArray();
+
+            Console.WriteLine("Orden en que fueron ingresados:");
+            for (int i = arreglo.Length - 1; i >= 0; i--)
+            {
+                Console.WriteLine(arreglo[i]);
+            }
+
+            Console.WriteLine("Orden en que seran retirados:");
+            for (int i = 0; i < arreglo.Length; i++)
+            {
+                Console.WriteLine(arreglo[i]);
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Queue<string> normal = new Queue<string>();
+            Queue<string> prioritaria = new Queue<string>();
+            int opcion = 0;
+            string lectura;
+
+            while (opcion != 6)
+            {
+                Console.WriteLine("1 Agregar cliente normal");
+                Console.WriteLine("2 Agregar cliente prioritario");
+                Console.WriteLine("3 Atender cliente");
+                Console.WriteLine("4 Mostrar proximo cliente");
+                Console.WriteLine("5 Mostrar cantidad de clientes");
+                Console.WriteLine("6 Salir");
+                opcion = Convert.ToInt32(Console.ReadLine());
+
+                if (opcion == 1)
+                {
+                    Console.WriteLine("Ingresa el nombre");
+                    lectura = Console.ReadLine();
+                    normal.Enqueue(lectura);
+                    Console.WriteLine("Cliente normal agreado");
+                }
+
+                if (opcion == 2)
+                {
+                    Console.WriteLine("Ingresa el nombre");
+                    lectura = Console.ReadLine();
+                    prioritaria.Enqueue(lectura);
+                    Console.WriteLine("Cliente prioritario agreado");
+                }
+                 
+                if (opcion == 3)
+                {
+                    if (prioritaria.Count > 0)
+                    {
+                        Console.WriteLine("Atendiendo a: " + prioritaria.Dequeue());
+                    }
+                    else
+                    {
+                        Console.WriteLine("Atendiendo a: " + normal.Dequeue());
+                    }
+                }
+
+                if (opcion == 4)
+                {
+                    if (prioritaria.Count > 0)
+                    {
+                        Console.WriteLine("El proximo es: " + prioritaria.Peek());
+                    }
+                    else
+                    {
+                        Console.WriteLine("El proximo es: " + normal.Peek());
+                    }
+                }
+
+                if (opcion == 5)
+                {
+                    Console.WriteLine("Clientes en total: " + (normal.Count + prioritaria.Count));
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Stack<string> pila = new Stack<string>();
+            int opcion = 0;
+            string lectura;
+
+            while (opcion != 5)
+            {
+                Console.WriteLine("1 Registrar operacion");
+                Console.WriteLine("2 Deshacer ultima operacion");
+                Console.WriteLine("3 Consultar ultima operacion");
+                Console.WriteLine("4 Mostrar cantidad de operaciones");
+                Console.WriteLine("5 Salir");
+                opcion = Convert.ToInt32(Console.ReadLine());
+
+                if (opcion == 1)
+                {
+                    Console.WriteLine("Ingresa la operacion");
+                    lectura = Console.ReadLine();
+                    pila.Push(lectura);
+                }
+                 
+                if (opcion == 2)
+                {
+                    Console.WriteLine("Se deshace: " + pila.Pop());
+                }
+
+                if (opcion == 3)
+                {
+                    Console.WriteLine("La ulitma operacion es: " + pila.Peek());
+                }
+
+                if (opcion == 4)
+                {
+                    Console.WriteLine("Cantidad de operaciones: " + pila.Count);
+                }
+            }
+        }
+    }
+}

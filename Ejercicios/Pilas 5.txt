@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Stack<char> pila = new Stack<char>();
+            string lectura;
+
+            Console.WriteLine("Ingresa una palabra");
+            lectura = Console.ReadLine();
+
+            foreach (char letra in lectura)
+            {
+                pila.Push(letra);
+            }
+
+            string invertida = "";
+            while (pila.Count > 0)
+            {
+                invertida = invertida + pila.Pop();
+            }
+             
+            Console.WriteLine("La palabra inverida es: " + invertida);
+
+            if (lectura == invertida)
+            {
+                Console.WriteLine("La palabra es palindroma");
+            }
+            else
+            {
+                Console.WriteLine("La palabra no es palindroma");
+            }
+        }
+    }
+}

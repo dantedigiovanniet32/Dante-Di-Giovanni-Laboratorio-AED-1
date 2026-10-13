@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Queue<int> cola = new Queue<int>();
+            int lectura;
+            int ultimo = 0;
+            int suma = 0;
+
+            Console.WriteLine("Ingresa numeros, termina con 0");
+            lectura = Convert.ToInt32(Console.ReadLine());
+
+            while (lectura != 0)
+            {
+                cola.Enqueue(lectura);
+                ultimo = lectura;
+                suma = suma + lectura;
+                lectura = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.WriteLine("El primer numero ingresado es: " + cola.Peek());
+            Console.WriteLine("El ultmo numero ingresado es: " + ultimo);
+            Console.WriteLine("Cantidad de numeros: " + cola.Count);
+            Console.WriteLine("La suma es: " + suma);
+             
+            Console.WriteLine("Se retiran en este orden:");
+            while (cola.Count > 0)
+            {
+                Console.WriteLine(cola.Dequeue());
+            }
+        }
+    }
+}

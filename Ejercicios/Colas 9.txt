@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Queue<Cliente> cola = new Queue<Cliente>();
+            int opcion = 0;
+            string lectura;
+
+            while (opcion != 5)
+            {
+                Console.WriteLine("1 Agregar cliente");
+                Console.WriteLine("2 Atender cliente");
+                Console.WriteLine("3 Consultar proximo cliente");
+                Console.WriteLine("4 Cantidad de clientes esperando");
+                Console.WriteLine("5 Salir");
+                opcion = Convert.ToInt32(Console.ReadLine());
+
+                if (opcion == 1)
+                {
+                    Cliente nuevo = new Cliente();
+                    Console.WriteLine("Ingresa el numero de cliente");
+                    nuevo.numero = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Ingresa el nombre");
+                    nuevo.nombre = Console.ReadLine();
+                    Console.WriteLine("Ingresa el tipo de tramite");
+                    nuevo.tramite = Console.ReadLine();
+                    cola.Enqueue(nuevo);
+                }
+                 
+                if (opcion == 2)
+                {
+                    Cliente atendido = cola.Dequeue();
+                    Console.WriteLine("Cliente: " + atendido.numero);
+                    Console.WriteLine("Nombre: " + atendido.nombre);
+                    Console.WriteLine("Tramite: " + atendido.tramite);
+                }
+
+                if (opcion == 3)
+                {
+                    Console.WriteLine("El proximo cliente es: " + cola.Peek().nombre);
+                }
+
+                if (opcion == 4)
+                {
+                    Console.WriteLine("Clientes esprando: " + cola.Count);
+                }
+            }
+        }
+    }
+
+    class Cliente
+    {
+        public int numero;
+        public string nombre;
+        public string tramite;
+    }
+}

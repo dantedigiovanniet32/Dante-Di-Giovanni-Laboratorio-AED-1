@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Stack<int> pila = new Stack<int>();
+             
+            int lectura;
+            int suma = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Ingresa un numero");
+                lectura = Convert.ToInt32(Console.ReadLine());
+                pila.Push(lectura);
+                suma = suma + lectura;
+            }
+
+            Console.WriteLine("Los numeros almazenados son:");
+            foreach (int numero in pila)
+            {
+                Console.WriteLine(numero);
+            }
+
+            Console.WriteLine("El tope de la pila es: " + pila.Peek());
+
+            Console.WriteLine("Cantidad de elementos: " + pila.Count);
+            Console.WriteLine("La suma es: " + suma);
+
+            Console.WriteLine("Extraigo los elementos:");
+            while (pila.Count > 0)
+            {
+                Console.WriteLine(pila.Pop());
+            }
+        }
+    }
+}

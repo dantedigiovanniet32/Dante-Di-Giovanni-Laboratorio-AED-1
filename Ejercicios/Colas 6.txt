@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Queue<string> cola = new Queue<string>();
+            string lectura;
+            int atendidos = 0;
+
+            Console.WriteLine("Ingresa clientes, termina con FIN");
+            lectura = Console.ReadLine();
+
+            while (lectura != "FIN")
+            {
+                cola.Enqueue(lectura);
+                lectura = Console.ReadLine();
+            }
+
+            Console.WriteLine("El proximo cliente es: " + cola.Peek());
+             
+            Console.WriteLine("Orden de atencion:");
+            while (cola.Count > 0)
+            {
+                Console.WriteLine(cola.Dequeue());
+                atendidos++;
+            }
+
+            Console.WriteLine("Cantidad de clientes atenddidos: " + atendidos);
+        }
+    }
+}
